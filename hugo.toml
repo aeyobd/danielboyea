@@ -1,0 +1,4 @@
+baseURL = 'https://astro.uvic.ca/~dboyea'
+languageCode = 'en-us'
+title = 'Daniel Boyea'
+theme = 'ananke'
