@@ -4,6 +4,8 @@
 	alt: alternative text
 	caption: caption
 	mouse: what the image says when moused over ("title" in HTML)
+
+	TODO: figure out caption problem...
 -->
 <figure {{ with .Get "class" }}class="{{.}}"{{ end -}}>
 	{{- with .Get "link"}}<a href="{{.}}">{{ end -}}
@@ -12,9 +14,7 @@
 	     {{- with .Get "alt" }} alt="{{.}}"{{ end -}}
 	>
 	{{- if .Get "link"}}</a>{{ end -}}
-	{{- with .Get "caption" -}}
 	<figcaption>
-	{{- . -}}
+	{{- (.Get "caption") | .GetPage.RenderString -}}
 	</figcaption>
-	{{- end -}}
 </figure>
